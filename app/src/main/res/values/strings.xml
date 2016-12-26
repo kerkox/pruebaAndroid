@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HolaMundo</string>
+
+    <string name="ventana1">Activity1</string>
+    <string name="Paul">Paul</string>
+    <string name="cadena">Ingresa Texto</string>
+    <string name="boton">Boton Nuevo</string>
+    <string name="atras">Atras</string>
+    <string name="abrir">abrir nueva</string>
+    <string name="mensaje">Este es el dato</string>
+    <string name="pantalla2">Acitvity 2</string>
+</resources>
