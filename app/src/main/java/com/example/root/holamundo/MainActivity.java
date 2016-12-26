@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +25,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editText;
     RadioGroup radioGroup;
     Spinner spinner;
+    ToggleButton toggleButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //**************************************
         boton = (Button) findViewById(R.id.boton1);
         boton.setOnClickListener(this);
+        //**************************************
         editText = (EditText) findViewById(R.id.texto);
+        //**************************************
         //Radiop Button
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioGroup.setOnCheckedChangeListener(new ListenerRadioButton());
+        //**************************************
         //Spiner
         spinner = (Spinner) findViewById(R.id.spinner);
         List list = new ArrayList();
@@ -60,6 +67,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+        //**************************************
+        //Toggle Button
+        toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast.makeText(MainActivity.this, "True", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "False", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
     }
 

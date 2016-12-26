@@ -92,4 +92,15 @@
         android:layout_marginTop="27dp"
         android:id="@+id/spinner" />
 
+    <ToggleButton
+        android:textOn="Encendido"
+        android:textOff="No selected"
+        android:text="ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/texto"
+        android:layout_toRightOf="@+id/texto"
+        android:layout_toEndOf="@+id/texto"
+        android:id="@+id/toggleButton" />
+
 </RelativeLayout>
