@@ -19,97 +19,17 @@ import android.widget.ToggleButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
 
-    Button boton;
-    EditText editText;
-    RadioGroup radioGroup;
-    Spinner spinner;
-    ToggleButton toggleButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //**************************************
-        boton = (Button) findViewById(R.id.boton1);
-        boton.setOnClickListener(this);
-        //**************************************
-        editText = (EditText) findViewById(R.id.texto);
-        //**************************************
-        //Radiop Button
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(new ListenerRadioButton());
-        //**************************************
-        //Spiner
-        spinner = (Spinner) findViewById(R.id.spinner);
-        List list = new ArrayList();
-        list.add("item 1");
-        list.add("item 2");
-        list.add("item 3");
-        list.add("item 4");
-        list.add("item 5");
-        list.add("item 6");
-        list.add("item 7");
-        list.add("item 8");
-
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,list);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(arrayAdapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this,"Position "+String.valueOf(spinner.getSelectedItem()),Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        //**************************************
-        //Toggle Button
-        toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    Toast.makeText(MainActivity.this, "True", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "False", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
 
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.boton1:
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                String dato = editText.getText().toString();
-                intent.putExtra("DATO",dato);
-                startActivity(intent);
-
-                break;
-
-        }
-    }
-
-    public class ListenerRadioButton implements RadioGroup.OnCheckedChangeListener{
-
-        @Override
-        public void onCheckedChanged(RadioGroup group, int checkedId) {
-            if(checkedId == R.id.radioButton){
-                Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_SHORT).show();
-            }else if(checkedId == R.id.radioButton2){
-                Toast.makeText(getApplicationContext(),"2",Toast.LENGTH_SHORT).show();
-            }else if(checkedId == R.id.radioButton3){
-                Toast.makeText(getApplicationContext(),"3",Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 }
