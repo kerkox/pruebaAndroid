@@ -12,20 +12,9 @@
     android:orientation="vertical"
     tools:context="com.example.root.holamundo.MainActivity">
 
-    <HorizontalScrollView
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/firefox" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/firefox" />
-        </LinearLayout>
-    </HorizontalScrollView>
+        android:layout_height="wrap_content"
+        android:text="Boton"
+        android:id="@+id/boton"/>
 </RelativeLayout>
